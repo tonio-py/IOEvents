@@ -1,0 +1,122 @@
+<head>
+    <link rel="stylesheet"  href="{{url_for('static', filename='css/register.css')}}"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="icon" href="{{ url_for('static', filename='images/ioevents.ico') }}"/>
+    <title>Events</title>
+</head>
+<body>
+<nav class="start">
+    <li><a href="{{ url_for('index') }}">IO Events</a></li>
+    <li><a href="#">Contact</a></li>
+    <li><a href="{{ url_for('about') }}">About</a></li>
+    <li><a href="{{ url_for('login') }}">Sign in</a></li>
+    <div class="{{ url_for('search_events') }}">
+        <input type="text" placeholder="search events"/>
+        <i class="fa fa-search"></i>
+    </div>
+</nav>
+<main>
+        <form class="container" method="POST" action="{{ url_for('register') }}">
+            <div class="design">
+                <div class="pill-1 rotate-45"></div>
+            </div>
+            {{ form.hidden_tag() }}
+        
+            <div class="login">
+                <h3 class="title">User / Organizer</h3>
+        
+                <div class="text-input">
+                    <i class="ri-user-fill"></i>
+                    <!-- {{ form.first_name.label }}  -->
+                    {{ form.first_name(placeholder='Name') }}
+                </div>
+        
+                <div class="text-input">
+                    <i class="ri-user-fill"></i>
+                    <!-- {{ form.surname.label }} -->
+                     {{ form.surname(placeholder='Surname') }}
+                </div>
+        
+                <div class="text-input">
+                    <i class="ri-mail-fill"></i>
+                    <!-- {{ form.email.label }}  -->
+                    {{ form.email(placeholder='Email') }}
+                </div>
+        
+                <div class="text-input">
+                    <i class="ri-lock-fill"></i>
+                    <!-- {{ form.password.label }}  -->
+                    {{ form.password(placeholder='Password') }}
+                </div>
+        
+                <div class="text-input">
+                    <i class="ri-lock-fill"></i>
+                    <!-- {{ form.confirm_password.label }}  -->
+                    {{ form.confirm_password(placeholder='Confirm Password') }}
+                </div>
+        
+                <div class="text-input">
+                    <i class="fa fa-id-card"></i>
+                    <!-- {{ form.ghana_card_id.label }}  -->
+                    {{ form.ghana_card_id(placeholder='Ghana Card') }}
+                </div>
+        
+                <div class="text-input">
+                    <i class="fa fa-phone"></i>
+                    <!-- {{ form.phone_number.label }}  -->
+                    {{ form.phone_number(placeholder='Phone Number') }}
+                </div>
+        
+                <div class="radio-input">
+                    <!-- {{ form.account_type.label }}  -->
+                    <!-- {{ form.account_type(id='user') }} -->
+        
+                    <!-- {{form.account_type.label }} -->
+                     <!-- {{ form.account_type(id='organizer') }} -->
+                     {% for subfield in form.account_type %}
+                     {{ subfield.label }} {{ subfield }}
+                     {% endfor %}
+                </div>
+                <!-- <button type="submit" class="login-btn">Register</button> -->
+                {{ form.submit(class_='login-btn') }}
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                <div class="flash-messages">
+                    {% for category, message in messages %}
+                    <div class="flash-message {{ category }}">{{ message }}</div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+                {% endwith %}
+                <br><br>
+                <div class="create">
+                    <a href="{{ url_for('login') }}">Login Your Account</a>
+                    <i class="ri-arrow-right-fill"></i>
+                </div>
+            </div>
+            </div>
+        </form>        
+            <!-- <a href="#" class="forgot">Forgot Username/Password?</a> -->
+
+</main>
+<footer>
+    <nav class="footer-nav">
+      <ul>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/privacy">Privacy Policy</a></li>
+        <li><a href="/contact">Contact US</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/privacy">Privacy</a></li>
+      </ul>
+    </nav>
+    <div class="social-media">
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+    </div>
+    <p>&copy; 2023 IsraOcra. All rights reserved.</p>
+  </footer>
+  
+</body>
+

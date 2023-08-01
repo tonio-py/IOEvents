@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Marcellus&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kablammo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+.content {
+    width: 100%;
+}
+body {
+    position: relative;
+    background-color: rgba(227, 176, 189, 0.2);
+}
+
+ nav.start li:nth-child(1){
+    font-family: "Cherry Bomb One";
+    font-weight: bolder;
+    font-size: 20px;
+ }
+
+.splash {
+    position:relative;
+    top: 8.9%;
+    width: 100%;
+    height: 350px;
+    background: url("../images/splash_one.jpg");
+    background-position: left;
+    background-size: cover;
+    color: white;
+    overflow-x: hidden;
+    margin-bottom: 90px;
+    
+}
+
+.splash p {
+    margin: 0 auto;
+    text-align: justify;
+    max-width: 600px;
+    min-width: 100px;
+    font-weight: bolder;
+    font-family: Cambria;
+    word-spacing: 0.3rem;
+    line-height:1.2rem;
+}
+.rec-eve {
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: capitalize;
+    font-family: Georgia;
+    color: #EE4C7C;
+    text-shadow: 1px 1px 3px #5D001E;
+}
+.splash h1 {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bolder;
+    font-family: Georgia;
+}
+
+
+nav.start {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    z-index: 333;
+    display: flex;
+    justify-content: space-around;
+    height: 70px;
+    font-family: Marcellus;
+    font-weight: bolder;
+    align-items: center;
+    background-color: #9A1750;
+    background:linear-gradient(124deg,  #9A1750, #5D001E, 20% #EE4C7C, #EE4C7C, 10% #9A1750 );
+    width: 100%;
+}
+
+input[type="text"] {
+    height:  40%;
+    box-sizing: content-box;
+    border: 2px solid #5D001E;
+    box-shadow: -1px 2px -2 #E3E2DF;
+    text-align: center;
+    border-radius: 5px;
+
+}
+
+li {
+    list-style-type:none;
+}
+
+a {
+    text-decoration: none;
+    color: #E3E2DF;
+}
+
+footer p {
+    color: white;
+    text-align: center;
+}
+
+
+select {
+    position: relative;
+    border-radius: 10px;
+    border: 1px solid white;
+    background: none;
+    color: white;
+    margin-right: 10px;
+    font-weight: bolder;
+    font-family: Georgia;
+    box-shadow: 1px 1px black;
+}
+
+.choose {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+footer {
+    position: relative;
+    width: 100%;
+    height: 150px;
+    margin-top: 100px;
+    background-color:#9A1750;
+    background-image: url('dotted.png');
+    background-size: 2px 2px;
+    background-repeat: repeat;
+    border-top: 4px solid #5D001E;
+}
+
+footer p {
+    margin-top: -2%;
+    font-weight: bolder;
+    font-family: Roboto, sans-serif;
+    font-size: 15px;
+    font-weight: bolder;
+
+}
+.footer-nav ul li a {
+    display: block;
+    float: left;
+    margin-right: 20px;
+    margin-top: 20px;
+    font-weight: bolder;
+    font-family: monospace;
+    font-size: 1.1em;
+}
+.footer-nav {
+    margin-left: 100px;
+    margin-bottom: 100px;
+}
+.social-media {
+    clear: left;
+    margin-left: 200px;
+}
+.social-media a {
+    margin-right: 80px;
+}
+
+
+.search {
+    color: white;
+    border: 2px solid black;
+    background-color: #5D001E;
+    padding-right: 20px;
+    border-radius: 10px;
+    box-sizing: content-box;
+}
+
+.search i {
+    cursor: pointer;
+}
+/* 
+#5D001E
+#E3E2DF
+#E3AFBC
+#9A1750
+#EE4C7C
+
+*/
+
+
+
+  @media (max-width: 60em) {
+    body {
+      padding: 3rem;
+    }
+  }
+  
+  .grid {
+    display: grid;
+    grid-auto-flow: column;
+    scroll-behavior: auto;
+    gap: 3.2rem;
+    overflow-y: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    
+
+  }
+  @media (max-width: 60em) {
+    .grid {
+      grid-gap: 3rem;
+    }
+  }
+  .grid__item {
+    width: 400px;
+    background-color: #fff;
+    border-radius: 0.2rem;
+    overflow: hidden;
+    cursor: pointer;
+    transition: 0.2s;
+    scroll-snap-align: start;
+    box-sizing: border-box;
+    border:3px solid #9A1750;
+  }
+  .grid__item:hover {
+    transform: translateY(-0.5%);
+    box-shadow: 0 4rem 8rem rgba(0, 0, 0, 0.2);
+  }
+  
+  .card__img {
+    display: block;
+    width: 100%;
+    height: 15rem;
+    object-fit: cover;
+    border-bottom: 3px solid #9A1750;
+  }
+  .card__content {
+    padding: 3rem 3rem;
+  }
+  .card__header {
+    font-size: 2rem;
+    font-weight: 500;
+    color: #0d0d0d;
+    margin-bottom: 1.2rem;
+  }
+  .card__text {
+    font-size: 1.3rem;
+    letter-spacing: 0.1rem;
+    line-height: 1.4;
+    color: #3d3d3d;
+    margin-bottom: 2.5rem;
+  }
+  .card__btn {
+    display: block;
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    text-align: center;
+    color: #EE4C7C;
+    background-color: white;
+    border: 1px solid #9A1750;
+    border-radius: 0.4rem;
+    transition: 0.2s;
+    cursor: pointer;
+    font-weight: bolder;
+  }
+  .card__btn span {
+    margin-left: 1rem;
+    transition: 0.2s;
+  }
+  .card__btn:hover, .card__btn:active {
+    background-color: #faa6c0;
+  }
+  .card__btn:hover span, .card__btn:active span {
+    margin-left: 1.5rem;
+  }
+  .grid::-webkit-scrollbar {
+    display: none;
+}
+
+.grid__item {
+    scroll-snap-align: start;
+}
+.price_and_date {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.price_and_date .price {
+    font-size: 1.1rem;
+    font-weight: bolder;
+
+}
+.price_and_date .date {
+    font-size: 1.1rem;
+    font-weight: bolder;
+}
+.price_and_date .date .month{
+    color: red;
+    text-align: monospace;
+    font-family: "Lilita One";
+}
